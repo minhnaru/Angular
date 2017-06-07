@@ -64,5 +64,35 @@
 		</ul>
 		<p>This example displays only the names containing the letter "i".</p>
 	</div>
+	<div class="div-eight" ng-controller="myCtrl8">
+		<h2>8</h2>
+		<p>Type a letter in the input field:</p>
+		<p><input type="text" ng-model="test8"></p>
+		<ul>
+			<li ng-repeat="x in name8 | filter:test8">
+				{{ x }}
+			</li>
+		</ul>
+	</div>
+	<div class="div-nine" ng-controller="myCtrl9">
+		<h2>9</h2>
+		<p>Click the table headers to change the sorting order:</p>
+		<table>
+			<tr>
+				<th ng-click="orderByMe('name')">Name</th>
+				<th ng-click="orderByMe('country')">Country</th>
+			</tr>
+			<tr ng-repeat="x in name9 | orderBy:myOrderBy">
+				<td>{{x.name}}</td>
+				<td>{{x.country}}</td>
+			</tr>
+		</table>
+	</div>
+	<div ng-controller="myCtrl10">
+		<h2>10</h2>
+		<p>The URL of this page is:</p>
+		<h3>{{myUrl}}</h3>
+		<p>This example uses the built-in $location service to get the absolute url of the page.</p>
+	</div>
 </body>
 </html>

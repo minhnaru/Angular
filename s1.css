@@ -5,35 +5,31 @@ body {
 .myform1 input.ng-invalid {
 	background-color: salmon;
 }
-.div-one input {
+.div-one input, .div-two input, .div-three input, .div-five input, .div-eight input {
 	height: 20px;
-	width: 110px;
 	font-size: 12px;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #a5a5a5;
+}
+.div-one input {
+	width: 110px;
 }
 .div-two input {
-	height: 20px;
 	width: 210px;
-	font-size: 12px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #a5a5a5;
 }
 .div-three input {
-	height: 20px;
 	width: 150px;
-	font-size: 12px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #a5a5a5;
 }
 .div-five input {
-	height: 20px;
 	width: 110px;
-	font-size: 12px;
+}
+.div-nine table {
 	border-style: solid;
 	border-width: 1px;
-	border-color: #a5a5a5;
+	width: 100%;
+}
+.div-nine tr {
+	border-style: solid;
+	border-width: 1px;
 }
