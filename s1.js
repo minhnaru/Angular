@@ -1,39 +1,31 @@
 // 1
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
+app.controller('myCtrl', function($scope, $location, $http, $interval) {
 	$scope.firstname = "Minh";
 	$scope.lastname = "Naru";
-});
 
-// 4
-app.controller('myCtrl4', function($scope) {
+	// 4
 	$scope.name_4 = "Click here";
 	$scope.changeName = function() {
 		$scope.name_4 = "Hello Minh	";
 	}
-});
 
-// 5
-app.controller('myCtrl5', function($scope) {
+	// 5
 	$scope.firstname5 = "John";
 	$scope.lastname5 = "Doe";
 	$scope.fullName = function() {
 		return $scope.firstname5 + " " + $scope.lastname5;
 	};
-})
 
-// 6
-app.controller('myCtrl6', function($scope) {
-	$scope.name6 = [
+	// 6
+	$scope.name_6 = [
 		{name:'Jani', country:'Norway'},
 		{name:'Hege', country:'Sweden'},
 		{name:'Kaik', country:'Denmark'}
 	];
-})
 
-// 7
-app.controller('myCtrl7', function($scope) {
-	$scope.name7 = [
+	// 7
+	$scope.name_7 = [
 		'Jani',
 		'Carl',
         'Margareth',
@@ -44,26 +36,22 @@ app.controller('myCtrl7', function($scope) {
         'Mary',
         'Kai'
 	];
-});
 
-// 8
-app.controller('myCtrl8', function($scope) {
-	$scope.name8 = [
-		'Jani',
-        'Carl',
+	// 8
+	$scope.name_8 = [
+		'Janip',
+        'Carlo',
         'Margareth',
-        'Hege',
-        'Joe',
-        'Gustav',
-        'Birgit',
-        'Mary',
-        'Kai'
+        'Hegess',
+        'Joely',
+        'Gustaver',
+        'Birgity',
+        'Maryland',
+        'Kaito'
 	];
-});
 
-// 9
-app.controller('myCtrl9', function($scope) {
-	$scope.name9 = [
+	// 9
+	$scope.name_9 = [
 		{name:'Jani',country:'Norway'},
         {name:'Carl',country:'Sweden'},
         {name:'Margareth',country:'England'},
@@ -77,19 +65,21 @@ app.controller('myCtrl9', function($scope) {
 	$scope.orderByMe = function(x) {
 		$scope.myOrderBy = x;
 	}
-});
 
-// 10
-app.controller('myCtrl10', function($scope, $location) {
+	// 10
 	$scope.myUrl = $location.absUrl();
-});
 
-// 11
-app.controller('myCtrl11', function($scope, $http) {
-	$http.get("s1.json")
+	// 11, 12
+	$http.get("https://raw.githubusercontent.com/minhnaru/Angular/master/s1.json")
 	.then(function(response) {
 		$scope.myData = response.data.records;
 	}, function(response) {
 		$scope.myData = "Something went wrong";
 	});
+
+	// 13
+	$scope.theTime = new Date().toLocaleTimeString();
+	$interval(function() {
+		$scope.theTime = new Date().toLocaleTimeString();
+	}, 1000);
 });

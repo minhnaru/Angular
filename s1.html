@@ -7,8 +7,8 @@
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 <script src="s1.js" type="text/javascript"></script>
-<body ng-app="myApp">
-	<div ng-controller="myCtrl">
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
 		<div class="div-one">
 			<h2>1</h2>
 			Name: <input ng-model="firstname">
@@ -34,73 +34,89 @@
 			<p>Edit the text field and it will get/lose classes according to the status.</p>
 			<p><b>Note:</b> A text field with the "required" attribute is not valid when it is empty.</p>
 		</div>
-	</div>
-	<div class="div-four" ng-controller="myCtrl4">
-		<h2>4</h2>
-		<h2 ng-click="changeName()">{{name_4}}</h2>
-		<p>Click on the header to run the "changeName" function.</p>
-		<p>This example demonstrates how to use the controller to change model data.</p>
-	</div>
-	<div class="div-five" ng-controller="myCtrl5">
-		<h2>5</h2>
-		First Name: <input type="text" ng-model="firstname5"><br>
-		Last Name: <input type="text" ng-model="lastname5"><br>
-		<h3>Full Name: {{fullName()}}</h3>
-	</div>
-	<div ng-controller="myCtrl6">
-		<h2>6</h2>
-		<ul>
-			<li ng-repeat="x in name6 | orderBy:'country'">
-				{{x.name + ', ' + x.country | uppercase}}
-			</li>
-		</ul>
-	</div>
-	<div ng-controller="myCtrl7">
-		<h2>7</h2>
-		<ul>
-			<li ng-repeat="x in name7 | filter:'i'">
-				{{ x }}
-			</li>
-		</ul>
-		<p>This example displays only the names containing the letter "i".</p>
-	</div>
-	<div class="div-eight" ng-controller="myCtrl8">
-		<h2>8</h2>
-		<p>Type a letter in the input field:</p>
-		<p><input type="text" ng-model="test8"></p>
-		<ul>
-			<li ng-repeat="x in name8 | filter:test8">
-				{{ x }}
-			</li>
-		</ul>
-	</div>
-	<div class="div-nine" ng-controller="myCtrl9">
-		<h2>9</h2>
-		<p>Click the table headers to change the sorting order:</p>
-		<table>
-			<tr>
-				<th ng-click="orderByMe('name')">Name</th>
-				<th ng-click="orderByMe('country')">Country</th>
-			</tr>
-			<tr ng-repeat="x in name9 | orderBy:myOrderBy">
-				<td>{{x.name}}</td>
-				<td>{{x.country}}</td>
-			</tr>
-		</table>
-	</div>
-	<div ng-controller="myCtrl10">
-		<h2>10</h2>
-		<p>The URL of this page is:</p>
-		<h3>{{myUrl}}</h3>
-		<p>This example uses the built-in $location service to get the absolute url of the page.</p>
-	</div>
-	<div ng-controller="myCtrl11">
-		<h2>11</h2>
-		<ul>
-			<li ng-repeat="x in myData">
-				{{ x.Name + ', ' + x.Country }}
-			</li>
-		</ul>
+		<div class="div-four">
+			<h2>4</h2>
+			<h2 ng-click="changeName()">{{name_4}}</h2>
+			<p>Click on the header to run the "changeName" function.</p>
+			<p>This example demonstrates how to use the controller to change model data.</p>
+		</div>
+		<div class="div-five">
+			<h2>5</h2>
+			First Name: <input type="text" ng-model="firstname5"><br>
+			Last Name: <input type="text" ng-model="lastname5"><br>
+			<h3>Full Name: {{fullName()}}</h3>
+		</div>
+		<div>
+			<h2>6</h2>
+			<ul>
+				<li ng-repeat="x in name_6 | orderBy:'country'">
+					{{x.name + ', ' + x.country | uppercase}}
+				</li>
+			</ul>
+		</div>
+		<div>
+			<h2>7</h2>
+			<ul>
+				<li ng-repeat="x in name_7 | filter:'i'">
+					{{ x }}
+				</li>
+			</ul>
+			<p>This example displays only the names containing the letter "i".</p>
+		</div>
+		<div class="div-eight">
+			<h2>8</h2>
+			<p>Type a letter in the input field:</p>
+			<p><input type="text" ng-model="test_8"></p>
+			<ul>
+				<li ng-repeat="x in name_8 | filter:test_8">
+					{{ x }}
+				</li>
+			</ul>
+		</div>
+		<div>
+			<h2>9</h2>
+			<p>Click the table headers to change the sorting order:</p>
+			<table>
+				<tr>
+					<th ng-click="orderByMe('name')">Name</th>
+					<th ng-click="orderByMe('country')">Country</th>
+				</tr>
+				<tr ng-repeat="x in name_9 | orderBy:myOrderBy">
+					<td>{{x.name}}</td>
+					<td>{{x.country}}</td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<h2>10</h2>
+			<p>The URL of this page is:</p>
+			<h3>{{myUrl}}</h3>
+			<p>This example uses the built-in $location service to get the absolute url of the page.</p>
+		</div>
+		<div>
+			<h2>11</h2>
+			<ul>
+				<li ng-repeat="x in myData">
+					{{ x.Name + ', ' + x.Country }}
+				</li>
+			</ul>
+			<p>Reading data from remote server.</p>
+		</div>
+		<div class="div-twelve">
+			<h2>12</h2>
+			<table>
+				<tr ng-repeat="x in myData">
+					<td>{{ $index + 1 }}</td>
+					<td>{{ x.Name }}</td>
+					<td>{{ x.Country }}</td>
+				</tr>
+			</table>
+		</div>
+		<div>
+			<h2>13</h2>
+			<p>The time is:</p>
+			<h2>{{theTime}}</h2>
+		</div>
 	</div>
 </body>
 </html>
