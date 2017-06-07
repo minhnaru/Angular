@@ -83,3 +83,13 @@ app.controller('myCtrl9', function($scope) {
 app.controller('myCtrl10', function($scope, $location) {
 	$scope.myUrl = $location.absUrl();
 });
+
+// 11
+app.controller('myCtrl11', function($scope, $http) {
+	$http.get("s1.json")
+	.then(function(response) {
+		$scope.myData = response.data.records;
+	}, function(response) {
+		$scope.myData = "Something went wrong";
+	});
+});

@@ -94,5 +94,13 @@
 		<h3>{{myUrl}}</h3>
 		<p>This example uses the built-in $location service to get the absolute url of the page.</p>
 	</div>
+	<div ng-controller="myCtrl11">
+		<h2>11</h2>
+		<ul>
+			<li ng-repeat="x in myData">
+				{{ x.Name + ', ' + x.Country }}
+			</li>
+		</ul>
+	</div>
 </body>
 </html>
