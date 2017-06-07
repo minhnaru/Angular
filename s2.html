@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>s2</title>
+	<link rel="stylesheet" type="text/css" href="s2.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="s2.js" type="text/javascript"></script>
+<body>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<div>
+			<h2>1</h2>
+			<p>Select a car:</p>
+			<select ng-model="selectedCar_1" ng-options="x.model for x in cars_1"></select>
+			<h2>You selected: {{selectedCar_1.model}}</h2>
+			<p>Its color is: {{selectedCar_1.color}}</p>
+			<p>When you use the ng-options directive to create dropdown lists, the selected value can be an object.</p>
+			<p>In this example you can display both the model and the color of the selected element.</p>
+		</div>
+		<div>
+			<h2>2</h2>
+			<p>Select a car:</p>
+			<select ng-model="selectedCar_2" ng-options="x for (x, y) in cars_2"></select>
+			<h2>You selected: {{selectedCar_2}}</h2>
+		</div>
+		<div>
+			<h2>3</h2>
+			<p>Select a car:</p>
+			<select ng-model="selectedCar_3" ng-options="x for (x, y) in cars_3"></select>
+			<h2>You selected: {{selectedCar_3.brand}}</h2>
+			<h2>Model: {{selectedCar_3.model}}</h2>
+			<h2>Color: {{selectedCar_3.color}}</h2>
+			<p>Note that the selected value represents an object.</p>
+		</div>
+	</div>
+</body>
+</html>
