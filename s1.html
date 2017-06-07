@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>s1</title>
+	<link rel="stylesheet" type="text/css" href="s1.css">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="s1.js" type="text/javascript"></script>
+<body ng-app="myApp">
+	<div ng-controller="myCtrl">
+		<div class="div-one">
+			<h1>1</h1>
+			Name: <input ng-model="firstname">
+				  <input ng-model="lastname">
+			<h3>You entered: {{firstname + ' ' + lastname}}</h3>
+			<p>Change the name in the input also change the header name.</p>
+		</div>
+		<div class="div-two">
+			<h1>2</h1>
+			<form name="myForm">
+				Email:
+				<input type="email" name="myAddress" ng-model="text">
+				<span ng-show="myForm.myAddress.$error.email">Not a valid email address</span>
+			</form>
+			<p>Enter your e-mail address in the input field. AngularJS will display an errormessage if the address is not an e-mail.</p>
+		</div>
+		<h1>3</h1>
+		<form name="myForm1" class="myform1">
+			Enter your name:
+			<input type="" name="myName" ng-model="myText" required>
+		</form>
+		<p>Edit the text field and it will get/lose classes according to the status.</p>
+		<p><b>Note:</b> A text field with the "required" attribute is not valid when it is empty.</p>
+		<h1>4</h1>
+
+	</div>
+</body>
+</html>

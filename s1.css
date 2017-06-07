@@ -1,0 +1,23 @@
+body {
+	font-family: "Helvetica", Arial, sans-serif;
+	font-size: 12px;
+}
+.myform1 input.ng-invalid {
+	background-color: salmon;
+}
+.div-one input {
+	height: 20px;
+	width: 30%;
+	font-size: 12px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #a5a5a5;
+}
+.div-two input {
+	height: 20px;
+	width: 50%;
+	font-size: 12px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #a5a5a5;
+}
